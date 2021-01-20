@@ -1,3 +1,5 @@
+- name: Hello ansible
+  shell: sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 - name: Install apps with homebrew
   homebrew: name={{ item }} state=present
   with_items:
