@@ -1,6 +1,6 @@
 # macOS Developer Setup Using Ansible
 
-This ansible playbook installs software to setup a dev environment via macOS.
+This ansible playbook installs software to setup a dev environment via macOS, homebrew, and ansible.
 
 ## Assumptions
 
