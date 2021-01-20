@@ -19,6 +19,8 @@ To setup, run the setup script. This will install homebrew and then use that to 
 
 ## Install
 
+Everything to be installed is listed in this [main.yaml](./roles/development/tasks/main.yaml).
+
 Install is setup to be idempotent. If the software is already on the machine it will be skipped. Add software as you need it and re-use the script.
 
 ```shell script
