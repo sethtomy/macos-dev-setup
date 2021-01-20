@@ -1,0 +1,16 @@
+- name: Install apps with homebrew
+  homebrew: name={{ item }} state=present
+  with_items:
+    - nvm
+    - jenv
+    - pyenv
+    - git
+- name: Install cask packages
+  homebrew_cask: name={{ item }} state=present
+  with_items:
+    - iterm2
+    - google-chrome
+    - spotify
+    - visual-studio-code
+    - intellij-idea
+    - docker
