@@ -5,6 +5,7 @@
     - jenv
     - pyenv
     - git
+    - bzt
 
 - name: Install cask packages
   homebrew_cask: name={{ item }} state=present
