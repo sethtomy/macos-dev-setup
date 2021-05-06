@@ -2,6 +2,8 @@
 
 This ansible playbook installs software to setup a dev environment via macOS, homebrew, and ansible.
 
+Homebrew setup borrows heavily from https://github.com/adamchainz/mac-ansible.
+
 ## Assumptions
 
 It is assumed that the following are available on your machine.

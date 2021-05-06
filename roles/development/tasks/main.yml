@@ -1,20 +1,37 @@
-- name: Install apps with homebrew
-  homebrew: name={{ item }} state=present
-  with_items:
-    - nvm
-    - jenv
-    - pyenv
-    - git
-    - bzt
+- name: Update homebrew.
+  homebrew:
+    state: latest
+    update_homebrew: true
 
-- name: Install cask packages
-  homebrew_cask: name={{ item }} state=present
-  with_items:
-    - iterm2
-    - google-chrome
-    - spotify
-    - visual-studio-code
-    - intellij-idea
-    - docker
-    - postman
-    - slack
+- name: Install homebrew packages
+  homebrew:
+    name: '{{ item }}'
+    state: latest
+  loop: '{{ homebrew_packages }}'
+
+- name: Install homebrew cask packages
+  command: brew install --cask {{ item }}
+  loop: '{{ homebrew_cask_packages }}'
+
+- name: homebrew cleanup
+  command: brew cleanup
+
+- name: Dock left.
+  community.general.osx_defaults:
+    domain: com.apple.dock
+    key: orientation
+    type: string
+    value: left
+    state: present
+
+- name: Dock autohide.
+  community.general.osx_defaults:
+    domain: com.apple.dock
+    key: autohide
+    type: bool
+    value: true
+    state: present
+
+- name: Kill dock for settings to take place.
+  ansible.builtin.shell: |
+    killall Dock

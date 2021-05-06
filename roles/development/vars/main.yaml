@@ -1,0 +1,16 @@
+homebrew_packages:
+  - nvm
+  - jenv
+  - pyenv
+  - git
+  - bzt
+
+homebrew_cask_packages:
+  - iterm2
+  - google-chrome
+  - spotify
+  - visual-studio-code
+  - intellij-idea
+  - docker
+  - postman
+  - slack
