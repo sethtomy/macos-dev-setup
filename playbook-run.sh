@@ -1,1 +1,1 @@
-ansible-playbook -i inventory site.yml -c local
+ansible-playbook -i inventory.ini site.yml -c local
